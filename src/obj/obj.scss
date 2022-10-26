@@ -1,0 +1,148 @@
+.anim {
+	--animation-duration: 7s;
+	transition: all 0,3s;
+}
+
+
+
+.background {
+	position: relative;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 700px;
+	height: 700px;
+	border-radius: 1000px;
+	background-color: white;
+	overflow: hidden;
+}
+
+.anim {
+	z-index: 2;
+
+	.fracturedLogo {
+		z-index: 3;
+
+		.topPart {
+			animation: hoverLeftToRight var(--animation-duration) ease alternate infinite;
+
+			@keyframes hoverLeftToRight {
+				0% {
+					transform: translateX(-800px);
+				}
+
+
+				25% {
+					transform: translateX(0px);
+				}
+			}
+		}
+
+		.bottomPart {
+			animation: hoverBottomToTop var(--animation-duration) ease alternate infinite;
+
+			@keyframes hoverBottomToTop {
+				0% {
+					transform: translatex(-580px) translatey(800px);
+				}
+
+				25% {
+					transform: translatex(0px) translatey(0px);
+				}
+			}
+		}
+
+	}
+
+	.logo {
+
+
+		.mainLogo {
+			z-index: 1000;
+			stroke: rgb(255, 255, 255);
+			stroke-width: 1.5px;
+			animation: visibilityTimings var(--animation-duration) ease alternate infinite;
+
+			@keyframes visibilityTimings {
+				0% {
+					visibility: hidden;
+				}
+
+				25% {
+					visibility: hidden;
+					opacity: 0;
+				}
+
+				28% {
+					visibility: visible;
+					opacity: 1;
+				}
+
+				100% {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+
+		@keyframes placeHolderAnims {
+			0% {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			24% {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			25% {
+				opacity: 0;
+				visibility: visible;
+			}
+
+			26% {
+				opacity: 0;
+				transform: translatex(8px) translatey(5px);
+			}
+
+			50% {
+				opacity: 1;
+				transform: translatex(0px) translatey(0px);
+			}
+			
+			75% {
+				opacity: 1;
+			}
+
+			95% {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			100% {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+
+		.shadowPlaceHolder1 {
+			z-index: 4;
+			visibility: hidden;
+			stroke: rgb(255, 255, 255);
+			stroke-width: 3px;
+			animation: placeHolderAnims var(--animation-duration) ease alternate infinite;
+		}
+
+		.shadowPlaceHolder2 {
+			z-index: 5;
+			visibility: hidden;
+			stroke: rgb(255, 255, 255);
+			stroke-width: 2px;
+			animation: placeHolderAnims var(--animation-duration)  ease-out alternate infinite;
+		}
+	}
+}
+

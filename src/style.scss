@@ -1,0 +1,9 @@
+@import "reset.scss";
+@import "obj/obj.scss";
+
+body {
+	display: flex;
+	background-color: #090909;
+	justify-content: center;
+	align-items: center;
+}
